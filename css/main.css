@@ -38,7 +38,7 @@ main, .content {
     float: right;
 }
 
-.interacoes button{
+.interacoes button {
     margin: 13px 8px;
 }
 
@@ -156,7 +156,7 @@ button.slick-next {
     margin: 0 auto;
     width: 50%;
     position: absolute;
-    left: 46%;
+    left: 45%;
     top: 590px;
 }
 
@@ -227,39 +227,40 @@ h3 {
     background: #eeeeee;
 }
 
-.form{
+.form {
     width: 50%;
     margin: 0 auto;
     padding-top: 5em;
     min-height: 100%;
 }
 
-.form .form-control{
+.form .form-control {
     width: 60%;
 }
 
-.form p{
+.form p {
     color: #8b8b8b;
     padding-bottom: 2em;
 }
 
-.form h2{
+.form h2 {
     color: #646464;
 }
 
-.form input[type="checkbox"]{
+.form input[type="checkbox"] {
     margin: 2em 0;
 }
 
-.form button{
+.form button {
     margin-right: 1em;
 }
 
-.form #forgot{
+.form #forgot {
     margin-left: 30%;
 }
 
 /* Trapaça */
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -277,7 +278,7 @@ h3 {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .btn-sm {
