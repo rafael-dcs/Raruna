@@ -222,3 +222,36 @@ h3 {
     height: 70px;
     background: #eeeeee;
 }
+
+#register{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2em;
+}
+
+#register .form-control{
+    width: 60%;
+}
+
+#register p{
+    color: #8b8b8b;
+    padding-bottom: 2em;
+}
+
+#register h2{
+    color: #646464;
+}
+
+#register input[type="checkbox"]{
+    margin: 2em 0;
+}
+
+#register button{
+    margin-right: 1em;
+    margin-bottom: 9em;
+}
+
+footer{
+    background-color: #252323;
+    height: 10em;
+}
