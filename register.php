@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="icofont/icofont.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                     <a title="Raruna!" href="index.php"><img src="./img/Logo.png"></a>
                 </div>
                 <div class="interacoes">
-                    <a title="Register" href="register.php"><button class="btn btn-primary btn-sm">Register</button></a>
+                    <a title="Register" href="register.php"><buttonclass="btn btn-primary btn-sm">Register</button></a>
                     <a title="Login" href="login.php"><button class="btn btn-dark btn-sm">Login</button></a>
                 </div>
             </div>
@@ -41,22 +41,29 @@
         </div>
     </main>
     <div class="form">
-        <h2>Login</h2>
-        <p>Access all of our songs</p>
+        <h2>Register Now</h2>
+        <p>Ain't you a big music lover? Hurry then!</p>
         <form action="">
             <div class="form-group">
-                <input class="form-control" type="text" name="email" placeholder="Email">                
+                <input class="form-control" type="text" name="name" placeholder="Name">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="nome" placeholder="Password">                
+                <input class="form-control" type="text" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="nome" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="conf-password" name="nome" placeholder="Confirm Password">
             </div>
             <div>
-                <input class="" type="checkbox" name="remember">
-                <label for="remember">Remember me</label>
-                <a title="Send an email to change password" id="forgot" href="">Forgot your password?</a>
+                <input class="" type="checkbox" name="terms">
+                <label for="terms">I accept the <a href="">Terms of Use</a> & <a href="">Privacy Policy</a> for
+                    course.</label>
             </div>
             <div>
-                <a href="" title="Login"><button name="login" class="btn btn-primary">Login</button></a>
+                <a href="" title="I'm kinda poor"><button class="btn btn-outline-secondary">Register Free</button></a>
+                <a href="" title="I'm rich AF"><button class="btn btn-primary">I Want Premium</button></a>
             </div>
         </form>
     </div>

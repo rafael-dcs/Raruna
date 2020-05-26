@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/slick.scss" />
     <link rel="stylesheet" href="icofont/icofont.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <title>Raruna</title>
 </head>
 
@@ -13,11 +14,11 @@
         <main>
             <div class="header-1">
                 <div class="logo">
-                    <a title="Raruna!" href="index.html"><img src="./img/Logo.png"></a>
+                    <a title="Raruna!" href="index.php"><img src="./img/Logo.png"></a>
                 </div>
                 <div class="interacoes">
-                    <a title="Register" href="register.html"><buttonclass="btn btn-primary btn-sm">Register</button></a>
-                    <a title="Login" href="login.html"><button class="btn btn-dark btn-sm">Login</button></a>
+                    <a title="Register" href="register.php"><buttonclass="btn btn-primary btn-sm">Register</button></a>
+                    <a title="Login" href="login.php"><button class="btn btn-dark btn-sm">Login</button></a>
                 </div>
             </div>
         </main>
@@ -26,7 +27,7 @@
         <div class="header-2">
             <div class="menu">
                 <ul>
-                    <li><a title="Home" href="index.html">Home</a></li>
+                    <li><a title="Home" href="index.php">Home</a></li>
                     <li><a href="">Library</a></li>
                     <li><a href="">Live</a></li>
                     <li><a href="">Discover</a></li>
@@ -117,6 +118,7 @@
         <script type="text/javascript" src="js/jquery-migrate.js"></script>
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
+        <script src="bootstrap/bootstrap.min.js" ></script>
     </footer>
 </body>
 
