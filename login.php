@@ -28,9 +28,6 @@
             <div class="menu">
                 <ul>
                     <li><a title="Home" href="index.php">Home</a></li>
-                    <li><a href="">Library</a></li>
-                    <li><a href="">Live</a></li>
-                    <li><a href="">Discover</a></li>
                     <li><a href="">Premium</a></li>
                 </ul>
 
@@ -45,10 +42,10 @@
         <p>Access all of our songs</p>
         <form action="">
             <div class="form-group">
-                <input class="form-control" type="text" name="email" placeholder="Email">                
+                <input class="form-control" type="text" name="email" placeholder="Email">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="nome" placeholder="Password">                
+                <input class="form-control" type="password" name="nome" placeholder="Password">
             </div>
             <div>
                 <input class="" type="checkbox" name="remember">
@@ -65,7 +62,7 @@
         <script type="text/javascript" src="js/jquery-migrate.js"></script>
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
-        <script src="bootstrap/bootstrap.min.js" ></script>
+        <script src="bootstrap/bootstrap.min.js"></script>
     </footer>
 </body>
 
