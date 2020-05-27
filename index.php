@@ -17,7 +17,7 @@
                     <a title="Raruna!" href="index.php"><img src="./img/Logo.png"></a>
                 </div>
                 <div class="interacoes">
-                    <a title="Register" href="register.php"><buttonclass="btn btn-primary btn-sm">Register</button></a>
+                    <a title="Register" href="register.php"><button class="btn btn-primary btn-sm">Register</button></a>
                     <a title="Login" href="login.php"><button class="btn btn-dark btn-sm">Login</button></a>
                 </div>
             </div>
@@ -28,9 +28,6 @@
             <div class="menu">
                 <ul>
                     <li><a title="Home" href="index.php">Home</a></li>
-                    <li><a href="">Library</a></li>
-                    <li><a href="">Live</a></li>
-                    <li><a href="">Discover</a></li>
                     <li><a href="">Premium</a></li>
                 </ul>
 
@@ -118,7 +115,7 @@
         <script type="text/javascript" src="js/jquery-migrate.js"></script>
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
-        <script src="bootstrap/bootstrap.min.js" ></script>
+        <script src="bootstrap/bootstrap.min.js"></script>
     </footer>
 </body>
 
