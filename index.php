@@ -1,122 +1,86 @@
-<html>
+<?php
+include "header.php";
+?>
+<div class="coluna-100">
 
-<head>
-    <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/slick.scss" />
-    <link rel="stylesheet" href="icofont/icofont.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <title>Raruna</title>
-</head>
+    <div class="slider-principal">
+        <img src="./img/banner.png" />
+        <img src="./img/redbanner.png" />
+        <img src="./img/imagine.png" />
+        <img src="./img/21banner.png" />
+        <img src="./img/eminem.png" />
 
-<body>
-    <header class="menu-principal">
-        <main>
-            <div class="header-1">
-                <div class="logo">
-                    <a title="Raruna!" href="index.php"><img src="./img/Logo.png"></a>
-                </div>
-                <div class="interacoes">
-                    <a title="Register" href="register.php"><button class="btn btn-primary btn-sm">Register</button></a>
-                    <a title="Login" href="login.php"><button class="btn btn-dark btn-sm">Login</button></a>
-                </div>
-            </div>
-        </main>
-    </header>
-    <main class="coluna-100 menu-urls">
-        <div class="header-2">
-            <div class="menu">
-                <ul>
-                    <li><a title="Home" href="index.php">Home</a></li>
-                    <li><a href="">Premium</a></li>
-                </ul>
-
-            </div>
-            <div class="busca">
-                <input placeholder="Search Something" type="text">
-            </div>
+    </div>
+</div>
+<div class="coluna-100 bloco-texto">
+    <div class="content texto-destaque">
+        <h1>Millions of <strong>songs</strong> to choose from.</h1>
+        <p>Passionate about music, lovers of soundtracks and playlists in general,
+            it's time to familiarize yourself with the application
+            that will be your best ally in the musical world, Raruna Music Stream!</p>
+        <div class="col-3 bloco-texto" style="margin-top: 62px;">
+            <img src="./img/musicsimbol.png" />
+            <h3>If you <b>love</b> music</h3>
+            <p>Digital music service that gives you access to millions of songs</p>
         </div>
-    </main>
-    <div class="coluna-100">
+        <div class="col-3 bloco-texto" style="margin-top: 150px;">
+            <img src="./img/premium.png" />
+            <h3>Pay <b>less</b>, listen <b>more</b></h3>
+            <p>With Premium, listening to music on Raruna Music Stream is even better</p>
 
-        <div class="slider-principal">
-            <img src="./img/banner.png" />
-            <img src="./img/redbanner.png" />
-            <img src="./img/imagine.png" />
-            <img src="./img/21banner.png" />
-            <img src="./img/eminem.png" />
+        </div>
+        <div class="col-3 bloco-texto" style="margin-top: 72px;">
+            <img src="./img/share.png" />
+            <h3>Show what <b>you're</b> listening</h3>
+            <p>Share your favorite music with your friends</p>
 
         </div>
     </div>
-    <div class="coluna-100 bloco-texto">
-        <div class="content texto-destaque">
-            <h1>Millions of <strong>songs</strong> to choose from.</h1>
-            <p>Passionate about music, lovers of soundtracks and playlists in general,
-                it's time to familiarize yourself with the application
-                that will be your best ally in the musical world, Raruna Music Stream!</p>
-            <div class="col-3 bloco-texto" style="margin-top: 62px;">
-                <img src="./img/musicsimbol.png" />
-                <h3>If you <b>love</b> music</h3>
-                <p>Digital music service that gives you access to millions of songs</p>
-            </div>
-            <div class="col-3 bloco-texto" style="margin-top: 150px;">
-                <img src="./img/premium.png" />
-                <h3>Pay <b>less</b>, listen <b>more</b></h3>
-                <p>With Premium, listening to music on Raruna Music Stream is even better</p>
+</div>
+<div class="col-100 bloco-imagens-texto">
+    <div class="content" style="margin-left: 26%; float: left;">
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/catfish.png">
+            <p><b>Catfish and The Bottlemen</b></p>
 
-            </div>
-            <div class="col-3 bloco-texto" style="margin-top: 72px;">
-                <img src="./img/share.png" />
-                <h3>Show what <b>you're</b> listening</h3>
-                <p>Share your favorite music with your friends</p>
+        </div>
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/foster.png">
+            <p><b>Foster The People</b></p>
 
-            </div>
+            </p>
+        </div>
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/joy.png">
+            <p><b>Joy Division</b></p>
+
         </div>
     </div>
-    <div class="col-100 bloco-imagens-texto">
-        <div class="content" style="margin-left: 26%; float: left;">
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/catfish.png">
-                <p><b>Catfish and The Bottlemen</b></p>
+    <div class="content" style="margin-left: 26%; float: left;">
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/redhot.png">
+            <p><b>Red Hot Chili Peppers</b></p>
 
-            </div>
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/foster.png">
-                <p><b>Foster The People</b></p>
-
-                </p>
-            </div>
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/joy.png">
-                <p><b>Joy Division</b></p>
-
-            </div>
         </div>
-        <div class="content" style="margin-left: 26%; float: left;">
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/redhot.png">
-                <p><b>Red Hot Chili Peppers</b></p>
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/redhot2.png">
+            <p><b>Red Hot Chili Peppers</b></p>
 
-            </div>
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/redhot2.png">
-                <p><b>Red Hot Chili Peppers</b></p>
+        </div>
+        <div class="col-3 bloco-texto bloco-imagem">
+            <img src="./img/avenged.png">
+            <p><b>Avenged Sevenfold</b></p>
 
-            </div>
-            <div class="col-3 bloco-texto bloco-imagem">
-                <img src="./img/avenged.png">
-                <p><b>Avenged Sevenfold</b></p>
-
-            </div>
         </div>
     </div>
-    <footer>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery-migrate.js"></script>
-        <script type="text/javascript" src="js/slick.min.js"></script>
-        <script type="text/javascript" src="./js/main.js"></script>
-        <script src="bootstrap/bootstrap.min.js"></script>
-    </footer>
+</div>
+<footer>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+</footer>
 </body>
 
 </html>
