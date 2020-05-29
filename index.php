@@ -4,11 +4,11 @@ include "header.php";
 <div class="coluna-100">
 
     <div class="slider-principal">
-        <img src="./img/banner.png" />
-        <img src="./img/redbanner.png" />
-        <img src="./img/imagine.png" />
-        <img src="./img/21banner.png" />
-        <img src="./img/eminem.png" />
+        <img src="assets/img/banner.png" />
+        <img src="assets/img/redbanner.png" />
+        <img src="assets/img/imagine.png" />
+        <img src="assets/img/21banner.png" />
+        <img src="assets/img/eminem.png" />
 
     </div>
 </div>
@@ -75,11 +75,11 @@ include "header.php";
     </div>
 </div>
 <footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="./assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script src="assets/bootstrap/bootstrap.min.js"></script>
 </footer>
 </body>
 
