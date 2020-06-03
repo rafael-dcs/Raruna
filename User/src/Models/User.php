@@ -9,3 +9,4 @@ class Users{
     
 
 }
+//insert,update,delete,select

@@ -6,3 +6,4 @@ class Music{
     var $duration;
     var $idalbum;
 }
+//select

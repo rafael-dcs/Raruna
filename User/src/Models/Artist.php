@@ -5,3 +5,4 @@ class Artist{
     var $name;
     var $image;
 }
+//select
