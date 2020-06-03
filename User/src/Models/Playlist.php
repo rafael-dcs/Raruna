@@ -7,3 +7,4 @@ class Playlist{
     var $image;
     var $iduser;
 }
+//insert,update,delete,select

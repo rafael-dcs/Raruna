@@ -5,3 +5,4 @@ class MusicsPlaylist{
     var $idplaylist;
     var $idmusic;
 }
+//insert,delete,select
