@@ -1,5 +1,7 @@
 ﻿<?php
 
+include "../Connection.php";
+
 class Music{
     var $idmusic;
     var $title;
@@ -10,10 +12,11 @@ class Music{
         $query = '
             select * from musics 
         ';
-        $stmt = $conexao->query($query);
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $musics = $stmt->fetchAll();
     
-        for($musics as $music){
+        foreach($musics as $music){
             $this->idmusic = $music['idmusic'];
     
             $this->title = $music['title'];     
@@ -25,10 +28,11 @@ class Music{
     }
     
     function getMusic($valorId){
-        $query = '
+        $query = "
             select * from musics where idmusic = $valorId
-        ';
-        $stmt = $conexao->query($query);
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $music = $stmt->fetchAll();
     
         $this->idmusic = $music['idmusic'];

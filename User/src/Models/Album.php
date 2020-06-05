@@ -1,5 +1,7 @@
 ﻿<?php
 
+include "../Connection.php";
+
 class Album{
     var $idalbum;
     var $title;
@@ -13,10 +15,11 @@ class Album{
         $query = '
             select * from albuns 
         ';
-        $stmt = $conexao->query($query);
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $albuns = $stmt->fetchAll();
    
-        for($albuns as $album){
+        foreach($albuns as $album){
             $this->title = $album['title'];
             
             $this->year = $album['year'];
@@ -26,14 +29,16 @@ class Album{
             $this->image = $album['image'];
             
             $this->idartist = $album['idartist'];                
-        }    
+        }  
+        
     }
 
     function getAlbum($valorId){
-        $query = '
+        $query = "
             select * from albuns where idalbum = $valorId
-        ';
-        $stmt = $conexao->query($query);
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $album = $stmt->fetchAll();
         
         $this->title = $album['title'];

@@ -1,5 +1,7 @@
 ﻿<?php
 
+include "../Connection.php";
+
 class Artist{
     var $idartist;
     var $name;
@@ -9,10 +11,11 @@ class Artist{
         $query = '
             select * from artists 
         ';
-        $stmt = $conexao->query($query);
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $artists = $stmt->fetchAll();
     
-        for($artists as $artist){
+        foreach($artists as $artist){
             $this->idartist = $artist['idartist'];
     
             $this->name = $artist['name'];     
@@ -22,10 +25,11 @@ class Artist{
     }
     
     function getArtist($valorId){
-        $query = '
+        $query = "
             select * from artists where idartist = $valorId
-        ';
-        $stmt = $conexao->query($query);
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
         $artist = $stmt->fetchAll();
     
         $this->idartist = $artist['idartist'];
