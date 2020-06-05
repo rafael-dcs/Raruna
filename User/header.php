@@ -1,3 +1,8 @@
+<?php
+    include "src/UserControl.php";
+    // checkInternalAccess();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,3 +1,18 @@
+<?php
+    include 'User/src/UserControl.php';
+    checkExternalAccess();
+    if(filter_input(INPUT_POST, 'login')){
+        $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
+        $password = password_hash(filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
+        login($email, $password);
+    }
+    if(filter_input(INPUT_POST, 'register')){
+        $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
+        $password = password_hash(filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
+        register($email, $password, $name);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
