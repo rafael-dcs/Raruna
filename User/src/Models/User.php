@@ -1,6 +1,6 @@
 ﻿<?php
 
-include "../Connection.php";
+include $path . "src/Connection.php";
 
 class User{
     var $iduser;
