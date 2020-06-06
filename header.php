@@ -1,4 +1,5 @@
 <?php
+    $path = "User/";
     include 'User/src/UserControl.php';
     checkExternalAccess();
     if(filter_input(INPUT_POST, 'login')){
