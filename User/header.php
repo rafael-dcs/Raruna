@@ -1,4 +1,5 @@
 <?php
+$path = "";
 include "src/UserControl.php";
 // checkInternalAccess();
 ?>
@@ -13,7 +14,7 @@ include "src/UserControl.php";
     <link rel="stylesheet" type="text/css" href="../assets/css/slick.scss" />
     <link rel="stylesheet" href="../assets/icofont/icofont.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
     <title>perfil</title>
 </head>
 
@@ -22,7 +23,7 @@ include "src/UserControl.php";
 
         <div class="header-1">
             <div class="logo">
-                <a title="Raruna!" href="../index.php"><img src="../assets/img/Logo.png"></a>
+                <a title="Raruna!" href="index.php"><img src="../assets/img/Logo.png"></a>
             </div>
             <div class="interacoes">
                 <a title="Logout" href="../register.php"><button class="btn btn-dark btn-sm">Logout</button></a>
