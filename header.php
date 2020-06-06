@@ -1,18 +1,18 @@
 <?php
-    $path = "User/";
-    include 'User/src/UserControl.php';
-    checkExternalAccess();
-    if(filter_input(INPUT_POST, 'login')){
-        $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
-        $password = password_hash(filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
-        login($email, $password);
-    }
-    if(filter_input(INPUT_POST, 'register')){
-        $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
-        $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
-        $password = password_hash(filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
-        register($email, $password, $name);
-    }
+$path = "User/";
+include 'User/src/UserControl.php';
+checkExternalAccess();
+if (filter_input(INPUT_POST, 'login')) {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = password_hash(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
+    login($email, $password);
+}
+if (filter_input(INPUT_POST, 'register')) {
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = password_hash(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING), PASSWORD_DEFAULT);
+    register($email, $password, $name);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +33,12 @@
 
         <div class="container-fluid justify-content-between">
             <div class="row">
-                <div class="col-4 p-3">
+                <div class="col-8">
                     <a title="Raruna!" href="index.php"><img src="assets/img/Logo.png"></a>
 
                 </div>
 
-                <div class="col-4 p-3">
+                <div class="col-4">
                     <a title="Register" href="register.php"><button class="btn btn-primary btn-sm">Register</button></a>
                     <a title="Login" href="login.php"><button class="btn btn-dark btn-sm">Login</button></a>
                 </div>
