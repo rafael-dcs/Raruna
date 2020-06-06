@@ -20,19 +20,6 @@ ul {
     position: relative;
 }
 
-.logo {
-    padding: 14px;
-    width: 60%;
-    float: left;
-}
-
-/* .interacoes ul li {
-    margin-left: 20px;
-    display: inline-block;
-    float: left;
-    list-style: none;
-} */
-
 .interacoes {
     width: 24%;
     float: right;
