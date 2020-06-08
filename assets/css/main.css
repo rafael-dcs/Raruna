@@ -8,7 +8,7 @@ ul {
     padding: 0px !important;
 }
 
-.menu-principal {
+.row menu-principal {
     width: 100%;
     background-color: #252323;
     height: 60px;
@@ -185,10 +185,6 @@ li.slick-active button {
     width: 30%;
     float: left;
     position: relative;
-}
-
-.bloco-texto {
-    margin-top: 3em;
 }
 
 h3 {

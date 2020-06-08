@@ -19,34 +19,32 @@ include "src/UserControl.php";
 </head>
 
 <body>
-    <header class="menu-principal">
-        <div class="container">
-            <div class="row">
-                <div class="col-10"><a title="Raruna!" href="../index.php"><img src="../assets/img/Logo.png"></a></div>
-                <div class="col-2"><a title="Logout" href="../register.php"><button class="btn btn-dark btn-sm">Logout</button></a></div>
 
-            </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.php"><img src="../assets/img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.php">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.php">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Musicas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Feed</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-    </header>
-    <div class="conteiner">
-        <div class="row">
-            <nav class="coluna-100 menu-urls">
-                <div class="header-2">
-                    <div class="col-10 menu">
-
-                        <ul>
-                            <li><a title="Home" href="./index.php">Home</a></li>
-                            <li><a title="Profile" href="profile.php">Profile</a></li>
-                            <li><a href="">Musicas</a></li>
-                            <li><a href="">Feed</a></li>
-                        </ul>
-
-                    </div>
-                    <div class="col-2 busca">
-                        <input placeholder="Search Something" type="text">
-                    </div>
-
-                </div>
-        </div>
-    </div>
     </nav>
