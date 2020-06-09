@@ -1,4 +1,5 @@
 <?php
+$page = "Raruna - Artists";
 include "header.php";
 ?>
 

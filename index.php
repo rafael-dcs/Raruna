@@ -1,4 +1,5 @@
 <?php
+$page = "Raruna - Home";
 include "header.php";
 ?>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

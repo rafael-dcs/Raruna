@@ -1,4 +1,5 @@
 <?php
+$page = "Raruna - Register";
 include "header.php";
 ?>
 <div class="form">

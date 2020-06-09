@@ -15,7 +15,7 @@ include "src/UserControl.php";
     <link rel="stylesheet" href="../assets/icofont/icofont.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <title>perfil</title>
+    <title><?php echo $page ?></title>
 </head>
 
 <body>

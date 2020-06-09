@@ -1,4 +1,5 @@
 <?php
+$page = "Raruna - Feed";
 include "header.php";
 ?>
 
