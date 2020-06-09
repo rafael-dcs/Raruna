@@ -1,7 +1,10 @@
 <?php
 $path = "";
 include "src/UserControl.php";
-// checkInternalAccess();
+checkInternalAccess();
+if(filter_input(INPUT_GET, "logout") == "true"){
+    logout($_SESSION['user']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +45,6 @@ include "src/UserControl.php";
                     <a class="nav-link" href="feed.php">Feed</a>
                 </li>
             </ul>
-            <a href=""><button class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button></a>
+            <a href="?logout=true" title="Logout"><button class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button></a>
         </div>
     </nav>

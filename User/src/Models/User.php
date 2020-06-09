@@ -14,16 +14,19 @@ class User{
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
-        if($stmt->num_rows > 0){
-            $user = $stmt->fetchAll();
+        if($stmt->rowCount() > 0){
+            $user = $stmt->fetchAll()[0];
             $this->iduser = $user['iduser'];
             $this->email = $user['email'];
             $this->password = $user['password'];
             $this->name = $user['name'];
+            return $this;
         }
+        return null;
     }
 
     function postUser(){
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         $query = "
             insert into users (email, password, name) values ('$this->email', '$this->password', '$this->name')
         ";
@@ -37,6 +40,9 @@ class User{
     }
 
     function putUser($field, $value, $email){
+        if($field == "password"){
+            $value = password_hash($value, PASSWORD_DEFAULT);
+        }
         $query = "
             update users set $field = '$value' where email = '$email' 
         ";

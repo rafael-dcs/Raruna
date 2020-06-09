@@ -1,11 +1,16 @@
 <?php
 $page = "Raruna - Login";
 include "header.php";
+if (filter_input(INPUT_POST, 'login')) {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    login($email, $password);
+}
 ?>
 <div class="form">
     <h2>Login</h2>
     <p>Access all of our songs</p>
-    <form action="">
+    <form action="" method="post">
         <div class="form-group">
             <input class="form-control" type="text" name="email" placeholder="Email">
         </div>
@@ -15,10 +20,10 @@ include "header.php";
         <div>
             <input class="" type="checkbox" name="remember">
             <label for="remember">Remember me</label>
-            <a title="Send an email to change password" id="forgot" href="">Forgot your password?</a>
+            <a title="If this worked you could send yourself an email" id="forgot" href="">Forgot your password?</a>
         </div>
         <div>
-            <a href="" title="Login"><button name="login" class="btn btn-primary">Login</button></a>
+            <input name="login" class="btn btn-primary" type="submit" value="Login">
         </div>
     </form>
 </div>
