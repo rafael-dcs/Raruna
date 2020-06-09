@@ -7,3 +7,6 @@ $('.slider-principal').slick({
   autoplay: true,
   autoplaySpeed: 2000
 });
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

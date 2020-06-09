@@ -42,6 +42,6 @@ include "src/UserControl.php";
                     <a class="nav-link" href="feed.php">Feed</a>
                 </li>
             </ul>
-            <a href=""><button class="btn btn-outline-success my-2 my-sm-0" type="button">Logout</button></a>
+            <a href=""><button class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button></a>
         </div>
     </nav>
