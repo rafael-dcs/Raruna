@@ -323,3 +323,33 @@ body {
 .image-container:hover .middle {
     opacity: 1;
 }
+
+#feed h5, #feed p{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+}
+.card-body{
+    width: 200px;
+}
+#feed h2, #artist h2, #album h2, #playlist h2{
+    border-bottom: 1px solid #343a40;
+}
+
+.music-list .play, .order{
+    width: 15px;
+}
+.music-list .song-name{
+    width: 80%;
+}
+#artist .artist-name, #album .album-name, #playlist .playlist-name{
+    padding-bottom: 20px;
+}
+#playlist .delete{
+    float: right;
+}
+#playlist .image-label{
+    color: #818181;
+}
