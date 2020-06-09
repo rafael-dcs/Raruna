@@ -21,8 +21,6 @@ function login($email, $password){
     if(password_verify($password, $user->password)){
         $_SESSION['user'] = $user->email;
         checkExternalAccess();
-    }else{
-        echo "AAAAAAA";
     }
 }
 
@@ -34,7 +32,7 @@ function logout($email){
 }
 
 function register($email, $password, $name){
-    $user = new user;
+    $user = new User;
     $user->email = $email;
     $user->password = $password;
     $user->name = $name;
@@ -43,12 +41,23 @@ function register($email, $password, $name){
     }
 }
 
+function profile($email){
+    $user = new User;
+    $user = $user->getUser($email);
+    return $user;
+}
+
 function editPassword($email, $oldpassword, $newpassword){
     $user = new User;
-    $user->getUser($email);
-    if($oldpassword === $user->password){
+    $user = $user->getUser($email);
+    if(password_verify($oldpassword, $user->password)){
         $user->putUser('password', $newpassword, $email);
     }
+}
+
+function editAccount($field, $value, $email){
+    $user = new User;
+    $user->putUser($field, $value, $email);
 }
 
 function deleteAccount($email){

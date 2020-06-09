@@ -15,7 +15,7 @@ if (filter_input(INPUT_POST, 'login')) {
             <input class="form-control" type="text" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" name="nome" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div>
             <input class="" type="checkbox" name="remember">

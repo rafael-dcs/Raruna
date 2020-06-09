@@ -1,6 +1,17 @@
 <?php
 $page = "Raruna - Profile";
 include "header.php";
+$profile = profile($_SESSION['user']);
+if(filter_input(INPUT_POST, "edit")){
+    if(filter_input(INPUT_POST, "name") != null){
+        editAccount("name", filter_input(INPUT_POST, "name"), $_SESSION['user'], FILTER_SANITIZE_STRING);
+    }
+    if(filter_input(INPUT_POST, "password") != null && filter_input(INPUT_POST, "current-password") != null){
+        $oldpassword = filter_input(INPUT_POST, "current-password", FILTER_SANITIZE_STRING);
+        $newpassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+        editPassword($_SESSION['user'], $oldpassword, $newpassword);
+    }
+}
 ?>
 
 <div class="container">
@@ -19,7 +30,7 @@ include "header.php";
                                 </div>
                             </div>
                             <div class="userData ml-3">
-                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);" class="text-dark">Some Name</a></h2>
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);" class="text-dark"><?php echo $profile->name ?></a></h2>
                                 <h6 class="d-block "><a href="javascript:void(0)" class="text-info">1,500</a> Playlists</h6>
 
                             </div>
@@ -46,7 +57,17 @@ include "header.php";
                                             <label style="font-weight:bold;">Full Name</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            Jamshaid Kamran
+                                            <?php echo $profile->name ?>
+                                        </div>
+                                    </div>
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Email</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            <?php echo $profile->email ?>
                                         </div>
                                     </div>
                                     <hr />
@@ -61,32 +82,32 @@ include "header.php";
                                     </div>
                                     <hr />
 
+
                                 </div>
                                 <div class="tab-pane fade" id="editProfile" role="tabpanel" aria-labelledby="editProfile-tab">
                                     <h3 class="text-black ">Edit Informations</h3>
                                     <div clas="row">
-                                        <form>
+                                        <form action="" method="post">
                                             <div class="input-group">
                                                 <div class="input-group-prepend ">
                                                     <span class="input-group-text" id="">First and last name</span>
                                                 </div>
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="name">
                                             </div><br>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label for="InputEmail1">Email address</label>
-                                                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                <input type="email" class="form-control" name="email" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                            </div> -->
+                                            <div class="form-group">
+                                                <label for="InputPassword1">Current Password</label>
+                                                <input type="password" class="form-control" name="current-password" id="InputPassword1" placeholder="Password">
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputPassword1">Password</label>
-                                                <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                                                <label for="InputPassword1">New Password</label>
+                                                <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password">
                                             </div>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="Check1">
-                                                <label class="form-check-label" for="Check1">Check me out</label>
-                                            </div>
-                                            <button type="submit" class="btn btn-secondary">Submit</button>
+                                            <input value="Submit" type="submit" class="btn btn-secondary" name="edit">
                                         </form>
 
                                     </div>

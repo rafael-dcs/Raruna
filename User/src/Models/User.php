@@ -48,6 +48,11 @@ class User{
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
+        if($stmt){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     static function deleteUser($email){

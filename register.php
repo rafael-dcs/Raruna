@@ -21,7 +21,7 @@ if (filter_input(INPUT_POST, 'register') != null) {
             <input class="form-control" type="text" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" name="nome" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
             <input class="form-control" type="conf-password" name="nome" placeholder="Confirm Password">
