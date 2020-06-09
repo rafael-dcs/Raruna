@@ -4,7 +4,7 @@ include "header.php";
 
 <section class='container' id='playlist'>
     <div class="row playlist-name">
-        <h2 class="text-dark">My PLaylists</h2>
+        <h2 class="text-dark">My Playlists</h2>
     </div>
     <div class="row" id="playlists">
         <div class='col-xs'>
