@@ -8,23 +8,33 @@ class Music{
     var $duration;
     var $idalbum;
 
-    function getMusics(){
+    static function getAllMusics(){
         $query = '
             select * from musics 
         ';
         $conn = openConnection();
         $stmt = $conn->query($query);
         $musics = $stmt->fetchAll();
+        return $musics;
+        // foreach($musics as $music){
+        //     $this->idmusic = $music['idmusic'];
     
-        foreach($musics as $music){
-            $this->idmusic = $music['idmusic'];
-    
-            $this->title = $music['title'];     
+        //     $this->title = $music['title'];     
             
-            $this->duration = $music['duration']; 
+        //     $this->duration = $music['duration']; 
             
-            $this->idalbum = $music['idalbum'];
-        }    
+        //     $this->idalbum = $music['idalbum'];
+        // }    
+    }
+
+    static function getMusics($idalbum){
+        $query = "
+            select * from musics where idalbum = $idalbum
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
+        $musics = $stmt->fetchAll();
+        return $musics;
     }
     
     function getMusic($valorId){
@@ -42,6 +52,8 @@ class Music{
         $this->duration = $music['duration']; 
             
         $this->idalbum = $music['idalbum'];                    
+
+        return $this;
     } 
 }
 //select

@@ -11,26 +11,36 @@ class Album{
     var $idartist;
 
     
-    function getAlbuns(){
+    static function getAllAlbuns(){
         $query = '
             select * from albuns 
         ';
         $conn = openConnection();
         $stmt = $conn->query($query);
         $albuns = $stmt->fetchAll();
-   
-        foreach($albuns as $album){
-            $this->title = $album['title'];
+        return $albuns;
+        // foreach($albuns as $album){
+        //     $this->title = $album['title'];
             
-            $this->year = $album['year'];
+        //     $this->year = $album['year'];
             
-            $this->record_comp = $album['record_comp'];
+        //     $this->record_comp = $album['record_comp'];
             
-            $this->image = $album['image'];
+        //     $this->image = $album['image'];
             
-            $this->idartist = $album['idartist'];                
-        }  
+        //     $this->idartist = $album['idartist'];                
+        // }  
         
+    }
+
+    static function getAlbuns($idartist){
+        $query = "
+            select * from albuns where idartist = $idartist 
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
+        $albuns = $stmt->fetchAll();
+        return $albuns;
     }
 
     function getAlbum($valorId){
@@ -39,7 +49,7 @@ class Album{
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
-        $album = $stmt->fetchAll();
+        $album = $stmt->fetchAll()[0];
         
         $this->title = $album['title'];
             
@@ -50,7 +60,8 @@ class Album{
         $this->image = $album['image'];
             
         $this->idartist = $album['idartist'];  
-           
+        
+        return $this;
     }
 }
 //select

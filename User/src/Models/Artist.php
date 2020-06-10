@@ -7,21 +7,21 @@ class Artist{
     var $name;
     var $image;
 
-    function getArtists(){
+    static function getArtists(){
         $query = '
             select * from artists 
         ';
         $conn = openConnection();
         $stmt = $conn->query($query);
         $artists = $stmt->fetchAll();
+        return $artists;
+        // foreach($artists as $artist){
+        //     $this->idartist = $artist['idartist'];
     
-        foreach($artists as $artist){
-            $this->idartist = $artist['idartist'];
-    
-            $this->name = $artist['name'];     
+        //     $this->name = $artist['name'];     
             
-            $this->image = $artist['image'];                    
-        }    
+        //     $this->image = $artist['image'];                    
+        // }    
     }
     
     function getArtist($valorId){
@@ -30,13 +30,15 @@ class Artist{
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
-        $artist = $stmt->fetchAll();
+        $artist = $stmt->fetchAll()[0];
     
         $this->idartist = $artist['idartist'];
     
         $this->name = $artist['name'];     
             
-        $this->image = $artist['image'];                    
+        $this->image = $artist['image'];
+        
+        return $this;
     } 
 }
 //select
