@@ -2,11 +2,11 @@
 $page = "Raruna - Profile";
 include "header.php";
 $profile = profile($_SESSION['user']);
-if(filter_input(INPUT_POST, "edit")){
-    if(filter_input(INPUT_POST, "name") != null){
+if (filter_input(INPUT_POST, "edit")) {
+    if (filter_input(INPUT_POST, "name") != null) {
         editAccount("name", filter_input(INPUT_POST, "name"), $_SESSION['user'], FILTER_SANITIZE_STRING);
     }
-    if(filter_input(INPUT_POST, "password") != null && filter_input(INPUT_POST, "current-password") != null){
+    if (filter_input(INPUT_POST, "password") != null && filter_input(INPUT_POST, "current-password") != null) {
         $oldpassword = filter_input(INPUT_POST, "current-password", FILTER_SANITIZE_STRING);
         $newpassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
         editPassword($_SESSION['user'], $oldpassword, $newpassword);
@@ -24,14 +24,17 @@ if(filter_input(INPUT_POST, "edit")){
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
                                 <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
-                                <div class="middle">
-                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change image" />
-                                    <input type="file" style="display: none;" id="profilePicture" name="file" />
-                                </div>
+
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);" class="text-dark"><?php echo $profile->name ?></a></h2>
                                 <h6 class="d-block "><a href="javascript:void(0)" class="text-info">1,500</a> Playlists</h6>
+                                <form>
+                                    <div class="file">
+                                        <input type="file" class="file-input" id="File">
+                                        <label class="file-label" for="File"></label>
+                                    </div>
+                                </form>
 
                             </div>
 
@@ -72,16 +75,6 @@ if(filter_input(INPUT_POST, "edit")){
                                     </div>
                                     <hr />
 
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Criation account date</label>
-                                        </div>
-                                        <div class="col-md-8 col-6">
-                                            ve aqui sla ou muda se for dificil
-                                        </div>
-                                    </div>
-                                    <hr />
-
 
                                 </div>
                                 <div class="tab-pane fade" id="editProfile" role="tabpanel" aria-labelledby="editProfile-tab">
@@ -90,7 +83,7 @@ if(filter_input(INPUT_POST, "edit")){
                                         <form action="" method="post">
                                             <div class="input-group">
                                                 <div class="input-group-prepend ">
-                                                    <span class="input-group-text" id="">First and last name</span>
+                                                    <span class="input-group-text" id="">Name</span>
                                                 </div>
                                                 <input type="text" class="form-control" name="name">
                                             </div><br>
