@@ -1,7 +1,5 @@
 ﻿<?php
 
-include "../Connection.php";
-
 class Artist{
     var $idartist;
     var $name;

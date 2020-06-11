@@ -1,6 +1,11 @@
 <?php
 $path = "";
+include "src/Connection.php";
 include "src/UserControl.php";
+include "src/MusicControl.php";
+
+
+
 checkInternalAccess();
 if(filter_input(INPUT_GET, "logout") == "true"){
     logout($_SESSION['user']);

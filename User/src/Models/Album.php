@@ -1,7 +1,5 @@
 ﻿<?php
 
-include "../Connection.php";
-
 class Album{
     var $idalbum;
     var $title;
