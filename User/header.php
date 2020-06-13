@@ -43,7 +43,7 @@ if(filter_input(INPUT_GET, "logout") == "true"){
                     <a class="nav-link" href="profile.php">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="playlist.php">Playlists</a>
+                    <a class="nav-link" href="playlists.php">Playlists</a>
                 </li>
 
                 <li class="nav-item">

@@ -333,7 +333,13 @@ body {
 }
 .card-body{
     width: 200px;
+    margin-right: 2em;
+    margin-bottom: 2em;
 }
+img.card-img-top{
+    width: 200px;
+}
+
 #feed h2, #artist h2, #album h2, #playlist h2{
     border-bottom: 1px solid #343a40;
 }

@@ -38,13 +38,29 @@ class Playlist{
         return null;
     }
 
-    function postPlaylist(){
+    function getPlaylistMusics($idplaylist){
+        $query = "
+            select * from musics_playlist where idplaylist = $idplaylist
+        ";
+        $conn = openConnection();
+        $stmt = $conn->query($query);
+        if($stmt->rowCount() > 0){
+            $musics = $stmt->fetchAll();
+            return $musics;
+        }
+        return null;
+    }
+
+    function postPlaylist($file){
         $query = "
             insert into playlists (title, description, image, iduser) values ('$this->title', '$this->description', '$this->image', $this->iduser)
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
         if($stmt){
+            if(is_uploaded_file($file)){
+                file_put_contents("../assets/img/" . $this->image, file_get_contents($file));
+            }
             return true;
         }else{
             return false;
@@ -77,9 +93,9 @@ class Playlist{
         }
     }
 
-    function removeMusic($idmusic){
+    function removeMusic($idmp){
         $query = "
-            delete from musics_playlist where idmusic = $idmusic
+            delete from musics_playlist where idmp = $idmp
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
