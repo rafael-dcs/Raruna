@@ -1,7 +1,5 @@
 ﻿<?php
 
-include "../Connection.php";
-
 class Music{
     var $idmusic;
     var $title;
@@ -43,7 +41,7 @@ class Music{
         ";
         $conn = openConnection();
         $stmt = $conn->query($query);
-        $music = $stmt->fetchAll();
+        $music = $stmt->fetchAll()[0];
     
         $this->idmusic = $music['idmusic'];
     

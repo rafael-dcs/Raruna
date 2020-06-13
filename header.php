@@ -1,5 +1,6 @@
 <?php
 $path = "User/";
+include 'User/src/Connection.php';
 include 'User/src/UserControl.php';
 checkExternalAccess();
 ?>

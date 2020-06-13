@@ -1,55 +1,52 @@
 <?php
-$page = "Raruna - Playlists";
+$page = "Raruna - Playlist";
 include "header.php";
+
+if(filter_input(INPUT_GET, 'play')){
+    $idplaylist = filter_input(INPUT_GET, 'play');
+    $playlist = playlistInfo($idplaylist);
+    $musics = myMusics($idplaylist);
+    $path = "?play=$idplaylist";
+    if(filter_input(INPUT_GET, 'del')){
+        $idmp = filter_input(INPUT_GET, 'del');
+        $playlist->removeMusic($idmp); 
+        header("Location: $path");
+    }
+}
+
+
 ?>
 
-<section class='container' id='playlist'>
-    <div class="row playlist-name">
-        <h2 class="text-dark">My Playlists</h2>
-    </div>
-    <div class="row" id="playlists">
-        <div class='col-xs'>
-            <div class="card">
-                <img class="card-img-top" src="http://placehold.it/150x150" id=imgAlbum alt="Card image cap">
-                <div class="card-body bg-dark">
-                    <h5 class="card-title text-light">title</h5>
-                    <p class="card-text text-light">description</p>
-                    <a href="" class="text-light delete" name="delete"><img src="../assets/img/imgLixo.png" /></a>
+<section class='container' id='album'>
+    <div class="row album-name justify-content-between">
+        <h2 class="text-dark align-self-end " style="margin-bottom: 0rem;"><?php echo $playlist->title ?></h2>
 
-                </div>
-            </div>
-        </div>
+        <img src="<?php echo $playlist->image ?>" class="rounded float-right ml-2" id="imgAlbum" style="width: 150px; height: 150px" />
+    </div>
+    <div class="row">
+        <p><?php echo $playlist->description ?></p>
     </div>
     <hr>
     <div class="row">
-        <button type="button" value="New Playlist" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">New Playlist</button>
+        <table class="table text-light bg-dark music-list">
+            <tbody>
+            <?php if(isset($musics)){ ?>
+                <?php foreach($musics as $idmusic){ 
+                    $music = musicInfo($idmusic['idmusic']);
+                ?>
+                <tr>
+                    <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                    <td class="song-name"><?php echo $music->title ?></td>
+                    <td><a href="<?php echo "?play=$playlist->idplaylist&del=".$idmusic['idmp'] ?>">del</a></td>
+                    <td class="duration text-right"><?php echo $music->duration ?></td>
+                </tr>
+                <?php } ?>
+            <?php } ?>
+            </tbody>
+        </table>
     </div>
     <hr>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered " role="document">
-            <div class="modal-content bg-dark text-white">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close text-muted" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <?php include "new-playlist-form.php" ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info text-white">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
-<script type="text/javascript" src="../assets/js/jquery.js"></script>
-<script type="text/javascript" src="../assets/js/jquery-migrate.js"></script>
-<script type="text/javascript" src="../assets/js/slick.min.js"></script>
-<script type="text/javascript" src="../assets/js/main.js"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

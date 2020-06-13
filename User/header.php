@@ -1,6 +1,11 @@
 <?php
 $path = "";
+include "src/Connection.php";
 include "src/UserControl.php";
+include "src/MusicControl.php";
+
+
+
 checkInternalAccess();
 if(filter_input(INPUT_GET, "logout") == "true"){
     logout($_SESSION['user']);
@@ -38,7 +43,7 @@ if(filter_input(INPUT_GET, "logout") == "true"){
                     <a class="nav-link" href="profile.php">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="playlist.php">Playlists</a>
+                    <a class="nav-link" href="playlists.php">Playlists</a>
                 </li>
 
                 <li class="nav-item">

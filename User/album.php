@@ -1,25 +1,44 @@
 <?php
 $page = "Raruna - Albuns";
 include "header.php";
+
+if(filter_input(INPUT_GET, 'album')){
+    $idalbum = filter_input(INPUT_GET, 'album');
+    $album = albumInfo($idalbum);
+    $musics = albumMusics($idalbum);
+    $path="?album=$idalbum";
+}
+
+
 ?>
 
 <section class='container' id='album'>
     <div class="row album-name justify-content-between">
-        <h2 class="text-dark align-self-end " style="margin-bottom: 0rem;">Album Name</h2>
+        <h2 class="text-dark align-self-end " style="margin-bottom: 0rem;"><?php echo $album->title ?></h2>
 
-        <img src="http://placehold.it/150x150" class="rounded float-right ml-2" id="imgAlbum" style="width: 150px; height: 150px" />
+        <img src="../assets/img/<?php echo $album->image ?>" class="rounded float-right ml-2" id="imgAlbum" style="width: 150px; height: 150px" />
     </div>
+    <hr>
     <div class="row">
         <table class="table text-light bg-dark music-list">
             <tbody>
-                <td class="play"><img src="../assets/img/imgPlay.png" /></td>
-                <td class="song-name">song name</td>
-                <td class="duration text-right">00:00</td>
+                <?php foreach($musics as $music){ ?>
+                <tr>
+                    <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                    <td class="song-name"><?php echo $music['title'] ?></td>
+                    <td><a href="#" class="" onClick="changeRef(<?php echo $music['idmusic'] ?>)" >add</a></td>
+                    <td class="duration text-right"><?php echo $music['duration'] ?></td>
+                </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
     <hr>
+    <div class="row">
+        <small class="text-muted"><?php echo "℗ $album->year $album->record_comp" ?></small>
+    </div>
 </section>
+<?php include "choose-playlist.php" ?>
 </body>
 
 </html>
