@@ -10,6 +10,9 @@ if (filter_input(INPUT_POST, 'login')) {
 <div class="form">
     <h2>Login</h2>
     <p>Access all of our songs</p>
+    <div class="alert alert-danger" role="alert">
+        Email or password is incorrect.
+    </div>
     <form action="" method="post">
         <div class="form-group">
             <input class="form-control" type="text" name="email" placeholder="Email">

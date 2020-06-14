@@ -1,17 +1,17 @@
 <?php
 $page = "Raruna - Playlists";
 include "header.php";
-if(filter_input(INPUT_POST, 'new-play')){
+if (filter_input(INPUT_POST, 'new-play')) {
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-    $image = md5($_FILES['image']['name']). ".jpg";
+    $image = md5($_FILES['image']['name']) . ".jpg";
     $file = $_FILES['image']['tmp_name'];
     newPlaylist($title, $description, $image, $file);
 }
-if(filter_input(INPUT_GET, 'del-play')){
+if (filter_input(INPUT_GET, 'del-play')) {
     $idplaylist = filter_input(INPUT_GET, 'del-play');
     $playlist = playlistInfo($idplaylist);
-    if($playlist->iduser == profile($_SESSION['user'])->iduser){
+    if ($playlist->iduser == profile($_SESSION['user'])->iduser) {
         deletePlaylist($idplaylist);
     }
 }
@@ -23,21 +23,21 @@ $playlists = myPlaylists($_SESSION['user']);
         <h2 class="text-dark">My Playlists</h2>
     </div>
     <div class="row" id="playlists">
-        <?php foreach($playlists as $idplaylist){
+        <?php foreach ($playlists as $idplaylist) {
             $myPlaylist = playlistInfo($idplaylist['idplaylist']);
         ?>
-        <div class='col-xs'>
-            <a href="playlist.php?play=<?php echo $myPlaylist->idplaylist ?>">
-                <div class="card">
-                    <img class="card-img-top" src="../assets/img/<?php echo $myPlaylist->image ?>" id="" alt="Card image cap">
-                    <div class="card-body bg-dark">
-                        <h5 class="card-title text-light"><?php echo $myPlaylist->title ?></h5>
-                        <p class="card-text text-light"><?php echo $myPlaylist->description ?></p>
-                        <a href="?del-play=<?php echo $myPlaylist->idplaylist ?>" class="text-light delete"><img src="../assets/img/imgLixo.png" /></a>
+            <div class='col-xs'>
+                <a href="playlist.php?play=<?php echo $myPlaylist->idplaylist ?>">
+                    <div class="card border-0 bg-transparent">
+                        <img class="card-img-top" src="../assets/img/<?php echo $myPlaylist->image ?>" id="" alt="Card image cap">
+                        <div class="card-body bg-dark border">
+                            <h5 class="card-title text-light"><?php echo $myPlaylist->title ?></h5>
+                            <p class="card-text text-light"><?php echo $myPlaylist->description ?></p>
+                            <a href="?del-play=<?php echo $myPlaylist->idplaylist ?>" class="text-light delete"><img src="../assets/img/imgLixo.png" /></a>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         <?php } ?>
     </div>
     <hr>
@@ -54,7 +54,7 @@ $playlists = myPlaylists($_SESSION['user']);
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="post"  enctype="multipart/form-data">   
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <h3 class="text-white ">New Playlist</h3>
                         <div class="row d-flex justify-content-center">
