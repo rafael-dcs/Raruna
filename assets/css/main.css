@@ -8,30 +8,21 @@ ul {
     padding: 0px !important;
 }
 
-.menu-principal {
+.row menu-principal {
     width: 100%;
     background-color: #252323;
     height: 60px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
-main, .content {
+.content {
     margin: 0 auto;
     width: 980px;
     position: relative;
 }
-
-.logo {
-    padding: 14px;
-    width: 60%;
-    float: left;
-}
-
-/* .interacoes ul li {
-    margin-left: 20px;
-    display: inline-block;
-    float: left;
-    list-style: none;
-} */
 
 .interacoes {
     width: 24%;
@@ -196,10 +187,6 @@ li.slick-active button {
     position: relative;
 }
 
-.bloco-texto {
-    margin-top: 3em;
-}
-
 h3 {
     font-weight: normal !important;
 }
@@ -300,8 +287,82 @@ h3 {
     border-color: #007bff;
 }
 
-/* footer{
-    background-color: #252323;
+body {
+    padding-top: 68px;
+    padding-bottom: 50px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image {
+    opacity: 1;
+    display: block;
     width: 100%;
-    height: 130px;
-} */
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image-container:hover .image {
+    opacity: 0.3;
+}
+
+.image-container:hover .middle {
+    opacity: 1;
+}
+
+#feed h5, #feed p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.card-body {
+    width: 200px;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
+
+img.card-img-top {
+    height: 200px;
+    width: 200px;
+}
+
+#feed h2, #artist h2, #album h2, #playlist h2 {
+    border-bottom: 1px solid #343a40;
+}
+
+.music-list .play, .order {
+    width: 15px;
+}
+
+.music-list .song-name {
+    width: 80%;
+}
+
+#artist .artist-name, #album .album-name, #playlist .playlist-name {
+    padding-bottom: 20px;
+}
+
+#playlist .delete {
+    float: right;
+}
+
+#playlist .image-label {
+    color: #818181;
+}
