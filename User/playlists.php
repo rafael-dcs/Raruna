@@ -59,12 +59,12 @@ $playlists = myPlaylists($_SESSION['user']);
                         <h3 class="text-white ">New Playlist</h3>
                         <div class="row d-flex justify-content-center">
                             <div class="col form-group align-self-center ">
-                                <input type="text" name="title" placeholder="Title" class="form-control bg-secondary text-white border-dark " required>
+                                <input type="text" name="title" placeholder="Title" class="form-control bg-light text-white border-dark " required>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col form-group align-self-center">
-                                <textarea name="description" class="form-control bg-secondary text-white border-dark" cols="30" rows="10" placeholder="Description" required></textarea>
+                                <textarea name="description" class="form-control bg-light text-white border-dark" cols="30" rows="10" placeholder="Description" required></textarea>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">

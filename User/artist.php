@@ -24,38 +24,28 @@ if (filter_input(INPUT_GET, 'artist')) {
                 ?>
                         <tr>
                             <td class="order"><?php echo $i + 1 ?>.</td>
-                            <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                            <td class="play"><img src="../assets/img/imgPlayMusic.png" /></td>
                             <td class="song-name"><?php echo $musics[0]['title'] ?></td>
                             <td><a class="button" onClick="changeRef(<?php echo $musics[0]['idmusic'] ?>)" data-toggle="modal" data-target="#exampleModal"><img src="../assets/img/addToPlaylist.png" /></a></td>
                             <td class="duration text-right"><?php echo $musics[0]['duration'] ?></td>
                         </tr>
 
-                        <!-- Modal -->
+
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-dark text-white">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        <h5 class="modal-title" id="exampleModalLabel">Choose Playlist</h5>
+
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <?php include "choose-playlist.php" ?>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
 
-
-                    <?php } ?>
-                <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
             </tbody>
         </table>
     </div>
@@ -77,8 +67,11 @@ if (filter_input(INPUT_GET, 'artist')) {
         <?php } ?>
     </div>
 </section>
-
-<?php include "choose-playlist.php" ?>
+<script type="text/javascript" src="../assets/js/jquery.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-migrate.js"></script>
+<script type="text/javascript" src="../assets/js/slick.min.js"></script>
+<script type="text/javascript" src="../assets/js/main.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

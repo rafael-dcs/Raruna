@@ -35,7 +35,7 @@ if (filter_input(INPUT_GET, 'play')) {
                         $music = musicInfo($idmusic['idmusic']);
                     ?>
                         <tr>
-                            <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                            <td class="play"><img src="../assets/img/imgPlayMusic.png" /></td>
                             <td class="song-name"><?php echo $music->title ?></td>
                             <td><a href="<?php echo "?play=$playlist->idplaylist&del=" . $idmusic['idmp'] ?>"><img src="../assets/img/imgLixo.png" /></a></td>
                             <td class="duration text-right"><?php echo $music->duration ?></td>
