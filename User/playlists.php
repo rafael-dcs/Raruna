@@ -23,6 +23,7 @@ $playlists = myPlaylists($_SESSION['user']);
         <h2 class="text-dark">My Playlists</h2>
     </div>
     <div class="row" id="playlists">
+    <?php if(isset($playlists)) { ?>
         <?php foreach ($playlists as $idplaylist) {
             $myPlaylist = playlistInfo($idplaylist['idplaylist']);
         ?>
@@ -39,6 +40,11 @@ $playlists = myPlaylists($_SESSION['user']);
                 </a>
             </div>
         <?php } ?>
+    <?php }else{ ?>
+        <div class="alert alert-success" role="alert">
+            You haven't created any playlists yet! :(
+        </div>
+    <?php } ?>
     </div>
     <hr>
     <div class="row">
@@ -64,7 +70,7 @@ $playlists = myPlaylists($_SESSION['user']);
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col form-group align-self-center">
-                                <textarea name="description" class="form-control bg-light text-white border-dark" cols="30" rows="10" placeholder="Description" required></textarea>
+                                <textarea name="description" class="form-control bg-light text-dark border-dark" cols="30" rows="10" placeholder="Description" required></textarea>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">

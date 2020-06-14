@@ -4,21 +4,25 @@ include "header.php";
 if (filter_input(INPUT_POST, 'login')) {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    login($email, $password);
+    if(!login($email, $password)){
+        $loginError = true;
+    }
 }
 ?>
 <div class="form">
     <h2>Login</h2>
     <p>Access all of our songs</p>
+    <?php if(isset($loginError) && $loginError){ ?>
     <div class="alert alert-danger" role="alert">
         Email or password is incorrect.
     </div>
+    <?php } ?>
     <form action="" method="post">
         <div class="form-group">
-            <input class="form-control" type="text" name="email" placeholder="Email">
+            <input class="form-control" type="text" name="email" placeholder="Email" required>
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password" required>
         </div>
         <div>
             <input class="" type="checkbox" name="remember">

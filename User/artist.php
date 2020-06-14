@@ -26,31 +26,15 @@ if (filter_input(INPUT_GET, 'artist')) {
                             <td class="order"><?php echo $i + 1 ?>.</td>
                             <td class="play"><img src="../assets/img/imgPlayMusic.png" /></td>
                             <td class="song-name"><?php echo $musics[0]['title'] ?></td>
-                            <td><a class="button" onClick="changeRef(<?php echo $musics[0]['idmusic'] ?>)" data-toggle="modal" data-target="#exampleModal"><img src="../assets/img/addToPlaylist.png" /></a></td>
+                            <td><a href="#" class="button" onClick="changeRef(<?php echo $musics[0]['idmusic'] ?>)" data-toggle="modal" data-target="#exampleModal"><img src="../assets/img/addToPlaylist.png" /></a></td>
                             <td class="duration text-right"><?php echo $musics[0]['duration'] ?></td>
                         </tr>
-
-
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content bg-dark text-white">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Choose Playlist</h5>
-
-                                    </div>
-                                    <div class="modal-body">
-                                        <?php include "choose-playlist.php" ?>
-                                    </div>
-
-
-
-                                <?php } ?>
-                            <?php } ?>
+                    <?php } ?>
+                <?php } ?>
             </tbody>
         </table>
     </div>
     <hr>
-
     <h3 class="text-dark">Albuns</h3>
     <div class="row" id="albuns">
         <?php foreach ($albuns as $album) { ?>
@@ -67,6 +51,7 @@ if (filter_input(INPUT_GET, 'artist')) {
         <?php } ?>
     </div>
 </section>
+<?php include "choose-playlist.php" ?>
 <script type="text/javascript" src="../assets/js/jquery.js"></script>
 <script type="text/javascript" src="../assets/js/jquery-migrate.js"></script>
 <script type="text/javascript" src="../assets/js/slick.min.js"></script>

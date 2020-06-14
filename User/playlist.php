@@ -21,7 +21,7 @@ if (filter_input(INPUT_GET, 'play')) {
     <div class="row album-name justify-content-between">
         <h2 class="text-dark align-self-end " style="margin-bottom: 0rem;"><?php echo $playlist->title ?></h2>
 
-        <img src="<?php echo $playlist->image ?>" class="rounded float-right ml-2" id="imgAlbum" style="width: 150px; height: 150px" />
+        <img src="../assets/img/<?php echo $playlist->image ?>" class="rounded float-right ml-2" id="imgAlbum" style="width: 150px; height: 150px" />
     </div>
     <div class="row">
         <p><?php echo $playlist->description ?></p>

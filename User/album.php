@@ -8,8 +8,6 @@ if (filter_input(INPUT_GET, 'album')) {
     $musics = albumMusics($idalbum);
     $path = "?album=$idalbum";
 }
-
-
 ?>
 
 <section class='container' id='album'>
@@ -29,39 +27,16 @@ if (filter_input(INPUT_GET, 'album')) {
                         <td><a href="#" class="" onClick="changeRef(<?php echo $music['idmusic'] ?>)" data-toggle="modal" data-target="#exampleModal"><img src="../assets/img/addToPlaylist.png" /></a></td>
                         <td class="duration text-right"><?php echo $music['duration'] ?></td>
                     </tr>
-
-
-
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content bg-dark text-white">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Choose Playlist</h5>
-
-                                </div>
-                                <div class="modal-body">
-                                    <?php include "choose-playlist.php" ?>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
-<?php } ?>
-
-
-
-
-
-</tbody>
-</table>
-</div>
-<hr>
-<div class="row">
-    <small class="text-muted"><?php echo "℗ $album->year $album->record_comp" ?></small>
-</div>
+    <hr>
+    <div class="row">
+        <small class="text-muted"><?php echo "℗ $album->year $album->record_comp" ?></small>
+    </div>
 </section>
+<?php include "choose-playlist.php" ?>
 <script type="text/javascript" src="../assets/js/jquery.js"></script>
 <script type="text/javascript" src="../assets/js/jquery-migrate.js"></script>
 <script type="text/javascript" src="../assets/js/slick.min.js"></script>

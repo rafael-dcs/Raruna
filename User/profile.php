@@ -12,6 +12,12 @@ if (filter_input(INPUT_POST, "edit")) {
         editPassword($_SESSION['user'], $oldpassword, $newpassword);
     }
 }
+if (filter_input(INPUT_POST, "send-image")) {
+    $image = md5($_FILES['image']['name']) . ".jpg";
+    $file = $_FILES['image']['tmp_name'];
+    sendImage($image, $file, $_SESSION['user']);
+}
+$playlists = myPlaylists($_SESSION['user']);
 ?>
 
 <div class="container">
@@ -23,16 +29,18 @@ if (filter_input(INPUT_POST, "edit")) {
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
-                                <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
-
+                                <img src="<?php echo isset($profile->image) ? "../assets/img/" . $profile->image : "http://placehold.it/150x150" ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);" class="text-dark"><?php echo $profile->name ?></a></h2>
-                                <h6 class="d-block "><a href="javascript:void(0)" class="text-info">1,500</a> Playlists</h6>
-                                <form>
+                                <h6 class="d-block "><a href="javascript:void(0)" class="text-info"><?php echo isset($playlists)? count($playlists) : 0 ?></a> Playlists</h6>
+                                <form action="" method="post" enctype="multipart/form-data">
                                     <div class="file">
-                                        <input type="file" class="file-input" id="File">
+                                        <input type="file" name="image" class="file-input" id="File">
                                         <label class="file-label" for="File"></label>
+                                    </div>
+                                    <div>
+                                        <input type="submit" style="margin-top: 5px;" class="btn btn-dark" value="Send" name="send-image">
                                     </div>
                                 </form>
 

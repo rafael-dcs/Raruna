@@ -18,6 +18,7 @@ class User{
             $this->email = $user['email'];
             $this->password = $user['password'];
             $this->name = $user['name'];
+            $this->image = $user['image'];
             return $this;
         }
         return null;
@@ -51,6 +52,27 @@ class User{
         }else{
             return false;
         }
+    }
+
+    function putUserImage($image, $file, $email){
+        if($this->putUser("image", $image, $email)){
+            if(is_uploaded_file($file)){
+                file_put_contents("../assets/img/" . $image, file_get_contents($file));
+            }
+        }
+        // $query = "
+        //     update users set image = '$image' where email = '$email' 
+        // ";
+        // $conn = openConnection();
+        // $stmt = $conn->query($query);
+        // if($stmt){
+        //     if(is_uploaded_file($file)){
+        //         file_put_contents("../assets/img/" . $this->image, file_get_contents($file));
+        //     }
+        //     return true;
+        // }else{
+        //     return false;
+        // }
     }
 
     static function deleteUser($email){
