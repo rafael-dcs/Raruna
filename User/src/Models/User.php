@@ -60,19 +60,6 @@ class User{
                 file_put_contents("../assets/img/" . $image, file_get_contents($file));
             }
         }
-        // $query = "
-        //     update users set image = '$image' where email = '$email' 
-        // ";
-        // $conn = openConnection();
-        // $stmt = $conn->query($query);
-        // if($stmt){
-        //     if(is_uploaded_file($file)){
-        //         file_put_contents("../assets/img/" . $this->image, file_get_contents($file));
-        //     }
-        //     return true;
-        // }else{
-        //     return false;
-        // }
     }
 
     static function deleteUser($email){

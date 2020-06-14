@@ -95,11 +95,6 @@ $playlists = myPlaylists($_SESSION['user']);
                                                 </div>
                                                 <input type="text" class="form-control" name="name">
                                             </div><br>
-                                            <!-- <div class="form-group">
-                                                <label for="InputEmail1">Email address</label>
-                                                <input type="email" class="form-control" name="email" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                            </div> -->
                                             <div class="form-group">
                                                 <label for="InputPassword1">Current Password</label>
                                                 <input type="password" class="form-control" name="current-password" id="InputPassword1" placeholder="Password">
@@ -125,13 +120,4 @@ $playlists = myPlaylists($_SESSION['user']);
     </div>
 </div>
 
-
-<script type="text/javascript" src="../assets/js/jquery.js"></script>
-<script type="text/javascript" src="../assets/js/jquery-migrate.js"></script>
-<script type="text/javascript" src="../assets/js/slick.min.js"></script>
-<script type="text/javascript" src="../assets/js/main.js"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php include "footer.php" ?>

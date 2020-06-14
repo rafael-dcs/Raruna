@@ -14,7 +14,6 @@
                             $playlist = playlistInfo($idplaylist);
                             if ($playlist->iduser == profile($_SESSION['user'])->iduser) {
                                 $playlist->addMusic($idmusic);
-                                header("Location: $path");
                             }
                         }
                         $playlists = myPlaylists($_SESSION['user']);

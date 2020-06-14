@@ -47,6 +47,4 @@ if (filter_input(INPUT_GET, 'play')) {
     </div>
     <hr>
 </section>
-</body>
-
-</html>
+<?php include "footer.php" ?>
