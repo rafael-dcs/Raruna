@@ -24,7 +24,7 @@ if (filter_input(INPUT_GET, 'album')) {
             <tbody>
                 <?php foreach ($musics as $music) { ?>
                     <tr>
-                        <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                        <td class="play"><img src="../assets/img/imgPLay.png" /></td>
                         <td class="song-name"><?php echo $music['title'] ?></td>
                         <td><a href="#" class="" onClick="changeRef(<?php echo $music['idmusic'] ?>)" data-toggle="modal" data-target="#exampleModal"><img src="../assets/img/addToPlaylist.png" /></a></td>
                         <td class="duration text-right"><?php echo $music['duration'] ?></td>
