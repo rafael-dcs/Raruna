@@ -20,7 +20,8 @@ if(filter_input(INPUT_GET, 'artist')){
             <tbody>
                 <?php for($i=0;$i<5;$i++){ 
                  if(isset($albuns[$i])){                    
-                $musics = albumMusics($albuns[$i]['idalbum']);                
+                $musics = albumMusics($albuns[$i]['idalbum']);
+
                 ?>
                 <tr>
                     <td class="order"><?php echo $i+1 ?>.</td>
