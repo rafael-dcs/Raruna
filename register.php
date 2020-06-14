@@ -2,7 +2,7 @@
 $page = "Raruna - Register";
 include "header.php";
 if (filter_input(INPUT_POST, 'register') != null) {
-    if(filter_input(INPUT_POST, 'terms') == "accepted"){
+    if (filter_input(INPUT_POST, 'terms') == "accepted") {
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
@@ -13,6 +13,9 @@ if (filter_input(INPUT_POST, 'register') != null) {
 <div class="form">
     <h2>Register Now</h2>
     <p>Ain't you a big music lover? Hurry then!</p>
+    <div class="alert alert-danger" role="alert">
+        Invalid email format.
+    </div>
     <form action="" method="post">
         <div class="form-group">
             <input class="form-control" type="text" name="name" placeholder="Name">

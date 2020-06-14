@@ -2,14 +2,14 @@
 $page = "Raruna - Playlist";
 include "header.php";
 
-if(filter_input(INPUT_GET, 'play')){
+if (filter_input(INPUT_GET, 'play')) {
     $idplaylist = filter_input(INPUT_GET, 'play');
     $playlist = playlistInfo($idplaylist);
     $musics = myMusics($idplaylist);
     $path = "?play=$idplaylist";
-    if(filter_input(INPUT_GET, 'del')){
+    if (filter_input(INPUT_GET, 'del')) {
         $idmp = filter_input(INPUT_GET, 'del');
-        $playlist->removeMusic($idmp); 
+        $playlist->removeMusic($idmp);
         header("Location: $path");
     }
 }
@@ -30,18 +30,18 @@ if(filter_input(INPUT_GET, 'play')){
     <div class="row">
         <table class="table text-light bg-dark music-list">
             <tbody>
-            <?php if(isset($musics)){ ?>
-                <?php foreach($musics as $idmusic){ 
-                    $music = musicInfo($idmusic['idmusic']);
-                ?>
-                <tr>
-                    <td class="play"><img src="../assets/img/imgPlay.png" /></td>
-                    <td class="song-name"><?php echo $music->title ?></td>
-                    <td><a href="<?php echo "?play=$playlist->idplaylist&del=".$idmusic['idmp'] ?>">del</a></td>
-                    <td class="duration text-right"><?php echo $music->duration ?></td>
-                </tr>
+                <?php if (isset($musics)) { ?>
+                    <?php foreach ($musics as $idmusic) {
+                        $music = musicInfo($idmusic['idmusic']);
+                    ?>
+                        <tr>
+                            <td class="play"><img src="../assets/img/imgPlay.png" /></td>
+                            <td class="song-name"><?php echo $music->title ?></td>
+                            <td><a href="<?php echo "?play=$playlist->idplaylist&del=" . $idmusic['idmp'] ?>"><img src="../assets/img/imgLixo.png" /></a></td>
+                            <td class="duration text-right"><?php echo $music->duration ?></td>
+                        </tr>
+                    <?php } ?>
                 <?php } ?>
-            <?php } ?>
             </tbody>
         </table>
     </div>
